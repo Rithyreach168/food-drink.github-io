@@ -1,0 +1,1200 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium';
+  text-decoration: none;
+  transition: .5s linear;
+}
+
+body{
+  scroll-behavior: smooth;
+}
+
+
+video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;  /* អោយក្លាយជា background*/
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading .header p{
+  margin-left: 2rem;
+  position:absolute;
+  color: cyan;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-top: 1.7rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#menu-btn{
+  font-size: 3rem;
+  color: cyan;
+  cursor: pointer;
+  display: none;
+}
+
+
+.header .navbar{
+  margin-top: 1.3rem;
+  margin-left: 25rem;
+  position: absolute;
+  border: 2px solid #fff;
+  padding: 0.8rem;
+}
+
+.header .navbar a{
+  font-size: 1.3rem;
+  color:cyan;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.header .navbar a:hover{
+  color: #fff;
+}
+
+.header .navbar::before,
+.header .navbar::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+}
+
+.header .navbar::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.header .navbar::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.heading .search{
+  position: absolute;
+  margin: 1.3rem 0 0 63rem;
+  border: 2px solid #fff;
+}
+
+.heading .search::before,
+.heading .search::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+}
+
+.heading .search::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.heading .search::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.heading .search .srch{
+  width: 300px;
+  font-family: cursive;
+  padding: 1rem;
+  background: transparent;
+  /* border: 2px solid #000; */
+  border-right: none;
+  font-size: 1rem;
+  /* border-bottom-left-radius: 50px; */
+  /* border-top-left-radius: 50px; */
+  text-transform:capitalize;
+  padding-left: 2rem;
+}
+
+.heading .search input{
+  caret-color:cyan;
+  color: aqua;
+  background: transparent;
+  border: none;
+  padding-left: 5rem;
+}
+
+.heading .search .srch::placeholder{
+  color: aqua;
+  font-family: cursive;
+  font-size: 1rem;
+}
+
+.srch{
+  outline: none;
+}
+
+
+.heading .search  button{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 1rem;
+  background-color:aqua;
+  /* border: 2px solid #000; */
+  font-size: 1rem;
+  margin-left: -3px;
+  /* border-bottom-right-radius: 50px; */
+  /* border-top-right-radius: 50px; */
+  color: #000;
+  text-transform: uppercase;
+  transition: .3s linear;
+  cursor: pointer;
+}
+
+.search .btn{
+  border: none;
+}
+
+.search .btn:hover{
+  background-color: #fff;
+}
+
+
+.heading .search button:focus{
+  outline: none;
+  border: none;
+}
+
+.heading .search button:hover{
+  background-color:#fff;
+  color: black;
+}
+
+.heading .addcase{
+  margin: 1.3rem 0 0 95rem;
+  position: absolute;
+}
+
+.heading .addcase .addcase-bar{
+  position: relative;
+  padding: 1rem;
+  font-size: 1.05rem;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid cyan;
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.heading .addcase .addcase-bar::before,
+.heading .addcase .addcase-bar::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+
+.heading .addcase .addcase-bar::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.heading .addcase .addcase-bar::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.heading .addcase .addcase-bar:hover:before,
+.heading .addcase .addcase-bar:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+/* ធ្វើអោយតួអក្សរមកចំកណ្តាល */
+.text-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+  
+}
+
+.h1-container{
+  font-size: 5rem; 
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: .15rem cyan;
+  text-align: center;
+  pointer-events: none;
+}
+
+.p-container{
+  text-transform: capitalize;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  color: #fff;
+  line-height: 1.5rem;
+  
+
+}
+
+.text-container button{
+  position: relative;
+  padding: 1rem;
+  font-size: 1.05rem;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  margin-top: 2rem;
+  background-color:aqua;
+  cursor: pointer;
+
+}
+
+.text-container button::before,
+.text-container button::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.text-container button::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.text-container button::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.text-container button:hover:before,
+.text-container button:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+ .icon-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 20rem;
+}
+
+.icon-container i{
+  padding: 1rem;
+  font-size: 2rem;
+  color: aqua;
+  cursor: pointer;
+  
+}
+
+.icon-container i:hover{
+  color: #fff;
+}
+
+.space{
+  height: 100vh;
+}
+
+.texts-container{
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: .10rem aqua;
+}
+
+#about{
+  background-image: url(/images/bg-about.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.about-page h1{
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 5rem;
+  color:aqua;
+}
+
+.about-page p{
+  margin-left: 5rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #000;
+  margin-top: 3rem;
+
+}
+
+.about-page button{
+  position: relative;
+  padding: 1rem;
+  font-size: 1.05rem;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  margin-top: 5rem;
+  margin-left: 6rem;
+  background-color:aqua;
+  cursor: pointer;
+
+}
+
+.about-page button::before,
+.about-page button::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.about-page button::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.about-page button::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.about-page button:hover:before,
+.about-page button:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+.about .row .image{
+  flex: 2 2 50rem;
+  margin-right: 2.5rem;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 1rem;
+}
+
+.product-container{
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+#shop{
+  height: 100vh;
+}
+
+.shop-container{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.shop-container .product1{
+  margin: 1rem;
+}
+
+.shop-container .product1 img{
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  
+}
+
+.shop-container .product1 p{
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-family: cursive;
+  text-transform: capitalize;
+}
+
+.shop-container .product1 i{
+  font-size: 1.5rem;
+  color: yellow;
+}
+
+.shop-container .product1 span{
+  font-size: 1.5rem;
+  font-family: cursive;
+}
+
+.product1{
+  border: 2px solid cyan;
+  width: 300px;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.product1::before,
+.product1::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.product1::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.product1::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.view-option{
+  padding: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: transparent;
+  border: 2px solid cyan;
+  position: relative;
+}
+
+.view-option::before,
+.view-option::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.view-option::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.view-option::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.view-option:hover:before,
+.view-option:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+
+
+#book{
+  background-image: url(/images/bg-register.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.input-container {
+  position: absolute;
+  padding: 1rem;
+  font-size: 1.05rem;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid cyan;
+  margin-right: 60rem;
+  padding-top: 5rem;
+}
+
+.input-container::before,
+.input-container::after{
+  content: '';
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.input-container::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.input-container::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+
+
+.book .texted-container{
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: .10rem cyan;
+}
+
+.input-container{
+  position:relative;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.input-container input{
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 500px;
+  outline: none;
+  font-size: 1.2rem;
+  font-family:verdana;
+  caret-color:cyan;
+  color: cyan;
+  background-color: transparent;
+  border: 2px solid cyan;
+  padding-left: 2.5rem;
+}
+
+.input-container input::placeholder{
+  color: cyan;
+  font-weight: 500;
+  
+}
+
+.input-container textarea{
+  font-family:verdana;
+  color: cyan;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  outline: 2px solid cyan;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
+
+.input-container textarea::placeholder{
+  color: cyan;
+}
+
+.input-container button{
+  position: relative;
+  padding: 1rem;
+  font-size: 1.05rem;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid cyan;
+  background-color:aqua;
+  cursor: pointer;
+  margin-right: 20rem
+
+}
+
+.input-container button::before,
+.input-container button::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+  
+}
+
+.input-container button::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.input-container button::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.input-container button:hover:before,
+.input-container button:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+#review{
+  background-image: url(/images/bg-review.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.person{
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.review-container{
+  border: 2px solid cyan;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.review-container::before,
+.review-container::after{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: .5s;
+}
+
+.review-container::before{
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.review-container::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.review-container:hover:before,
+.review-container:hover:after{
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+
+.person .review-container img{
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 10rem;
+}
+
+.person .review-container i{
+  color: yellow;
+  font-size: 1.5rem;
+  
+}
+
+.person .review-container h1{
+  font-family: cursive;
+  font-size: 1.5rem;
+  color: cyan;
+  text-transform: uppercase;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.person .review-container p{
+  font-family: verdana;
+  font-size: 1rem;
+  color: #000;
+  text-transform: capitalize;
+  padding-bottom: 1.5rem;
+}
+
+.person .review-container span{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2rem;
+  color: rgb(3, 125, 125);
+  text-transform: uppercase;
+}
+
+.footer .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2.3rem, 1fr));
+  gap: 1.5rem;
+  background-color: rgb(9, 94, 94);
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  padding: 1rem 1rem;
+  color: var(--main-color);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  color: cyan;
+}
+
+.footer .box-container .box a{
+  display: block;
+  font-size: 1.3rem;
+  padding: 1rem 1rem;
+  color: var(--main-color);
+  font-family: cursive;
+  color: #fff;
+}
+
+.footer .box-container .box a i{
+  padding-right: .5rem;
+  padding-left: 1rem;
+}
+
+.footer .box-container .box a:hover i{
+  padding-right: 2rem;
+}
+
+.footer .credit{
+  font-size: 2rem;
+  text-align: center;
+  color: var(--main-color);
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+  background-color: rgb(69, 64, 64);
+  color: #fff;
+  font-family: cursive;
+  text-transform: capitalize;
+}
+
+.footer .credit span{
+  border-bottom:var(--border);
+  color: cyan;
+}
+
+/* shop.html */
+
+
+
+@media (max-width:991px) {
+
+
+
+  html{
+    font-size: 55%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+  section{
+    padding: 2rem;
+  }
+
+  .search{
+    display: none;
+  }
+  
+}
+
+@media (max-width:768px) {
+
+  #menu-btn{
+    display: initial;
+    margin-top: 0.5rem;
+    font-size: 4rem;
+    color: aqua;
+  }
+  #menu-btn.bi-x-lg{
+    transform:rotate(180deg);
+  }
+
+  .header .navbar{
+    position: fixed; /*ធ្វើអោយទីតាំងមកនៅក្រោមទីតាំងដែលធ្លាប់នៅជាមួគ្នា*/
+    top: 11%; left: 0%; right: 0%;
+    background: #000;
+    padding: 0;
+    border: none;
+    margin: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /*បំបាត់navigetionbar*/
+    display: flex;
+  }
+
+  .header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .header .navbar a{
+    display: block;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 2rem 2rem;
+  }
+
+  .text-container .text-container{
+    position:static;
+    z-index: -1;
+  }
+
+
+  .home{
+    text-align: center;
+  }
+
+  #home{
+    background: url(/Gallary2.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+  .heading .header p{
+    top: 2.4%;
+    left: 18%;
+    font-size: 2rem;
+  }
+
+  .search{
+    display: none;
+  }
+
+  .heading .addcase{
+    display: initial;
+    position: absolute;
+    margin: 0;
+    left: 68%;
+    
+  }
+
+  .heading .addcase .addcase-bar{
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .text-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;  
+  }
+
+  .text-container .h1-container{
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .p-container{
+    font-size: 1.6rem;
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .text-container button{
+    cursor: pointer;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .icon-container{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  .icon-container i{
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .about-page h1{
+    padding-top: 3rem;
+    font-size: 4rem;
+    margin: 3rem 2.5rem 0;
+  }
+
+  .about-page p{
+    font-size: 1.6rem;
+    margin: 0;
+    line-height: 1.5;
+    margin-top: 3rem;
+    margin-left: 2.5rem;
+  }
+
+  .about-page button{
+    margin: 3rem 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .texts-container{
+    margin-top: -5rem;
+  }
+
+  #about{
+    background:url(/images/bg-about.jpg);
+    background-size: cover;
+    height: 110vh;
+  }
+
+  .about .texts-container{
+    margin-top: 2rem;
+  }
+  
+  .row{
+    flex-direction: column;
+
+  }
+
+  .about .row .image{
+    border:none;
+    border:none;
+    width: 100%;
+    margin-bottom: -22rem;
+    bottom: 0;
+  }
+
+  #shop{
+    height: 260vh;
+  }
+
+  .shop-container{
+    background-color: #fff;
+    padding-bottom: 5rem;
+  }
+  .product-container{
+    height: 0vh;
+  }
+  .shop-container{
+    flex-direction: column;
+    padding: 2rem 0 0 2rem;
+  }
+  .shop-container .product1{
+    margin: 0;
+    padding: 1rem 0 0 1rem;
+    margin-bottom: 4rem;
+    color: #000;
+  }
+  .shop-container .product1 img{
+    width: 150px;
+    height: auto;
+  }
+  .shop-container .product1 .view-option{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .product-container .texts-container{
+    margin-top: 0;
+    margin-bottom: 5rem;
+  }
+
+  .texted-container{
+    margin-top: 1rem;
+  }
+
+  .input-container{
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5rem 0 5rem;
+  }
+  
+  .input-container input{
+    padding: 2rem;
+    width: 280px;
+    font-size: 1.5rem;
+  }
+
+  .input-container input::placeholder{
+    font-size: 1.5rem;
+  }
+
+  .input-container button{
+    margin-top: 2rem;
+  }
+
+  .input-container textarea{
+    width: 280px;
+  }
+  
+  .person{
+    flex-direction: column;
+    padding: 1.5rem;
+    
+  }
+
+  .review-container{
+    width: 100%;
+    margin-bottom: 4rem;
+    margin-left: -0.4rem;
+  }
+
+  .texts-container{
+    margin-top: 3rem;
+  }
+
+  .person .review-container img{
+    text-align: center;
+    width: 125px;
+    height: 125px;
+    border-radius: 10rem;
+  }
+
+  .person .review-container p{
+    text-align: justify;
+    font-size: 1.5rem;
+  }
+
+  #review{
+    background: url(/images/bg-review.jpg);
+    height: 170vh;
+  }
+
+  #book{
+    background: url(/images/bg-register.jpg);
+    height: 95vh;
+  }
+  
+  .footer .box-container .box h3{
+    font-size: 1.5rem;
+    padding: 1.5rem ;
+    color: #000;
+  }
+
+  .footer{
+    background-color: rgb(3, 125, 125);
+  }
+
+  .footer .box-container{
+    background-color: rgb(3, 125, 125);;
+  }
+
+  .footer .box-container .box a{
+    color: #000;
+  }
+
+}
+
+@media (max-width:470px) {
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+  .footer .credit{
+    font-size: 1.5rem;
+  }
+
+  .search{
+    display: none;
+  }
+}
+
+@media (max-width:450px) {
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+  .search{
+    display: none;
+  }
+
+}
+
+@media (max-width:400px) {
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+  .search{
+    display: none;
+  }
+
+}
+
+@media (max-width:375px) {
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+
+
+}
+
